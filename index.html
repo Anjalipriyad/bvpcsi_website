@@ -17,6 +17,81 @@
   <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Global Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scrollDown {
+
+      0%,
+      100% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, 12px);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -69,35 +144,113 @@
   </header>
   <!-- END header -->
 
-  <section class="home-slider owl-carousel">
-    <div class="slider-item" style="background-image: url('images/MainPageImages/csibg.jpeg');">
-      <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-          <div class="col-md-10 text-center col-sm-12 element-animate">
-            <img src="images/MainPageImages/logoWithCsi.png">
-            <p class="mb-5 sub-text">The amalgamation of technology and culture and with BVPCSI at the juncture, we
-              provide a cornucopia of opportunities to give you the best of both worlds.</p>
+  <style>
+    /* Hero Section Styles */
+    .hero-section {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%), url('images/MainPageImages/csibg.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
 
-          </div>
-        </div>
-      </div>
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(244, 178, 20, 0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-logo {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      animation: scaleIn 1s ease-out;
+      filter: drop-shadow(0 10px 30px rgba(244, 178, 20, 0.3));
+    }
+
+    .hero-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.25rem;
+      line-height: 1.8;
+      margin: 0 auto;
+      max-width: 700px;
+      animation: fadeInUp 1s ease-out 0.3s backwards;
+    }
+
+    .hero-scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: fadeInUp 1s ease-out 0.6s backwards;
+    }
+
+    .hero-scroll-indicator span {
+      display: block;
+      width: 24px;
+      height: 40px;
+      border: 2px solid rgba(244, 178, 20, 0.5);
+      border-radius: 12px;
+      position: relative;
+    }
+
+    .hero-scroll-indicator span::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 8px;
+      background: #f4b214;
+      border-radius: 2px;
+      animation: scrollDown 2s infinite;
+    }
+
+    @media (max-width: 768px) {
+      .hero-logo {
+        max-width: 350px;
+      }
+
+      .hero-text {
+        font-size: 1.1rem;
+      }
+
+      .hero-section {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+
+  <section class="hero-section">
+    <div class="hero-content">
+      <img src="images/MainPageImages/logoWithCsi.png" alt="BVPCSI Logo" class="hero-logo">
+      <p class="hero-text">The amalgamation of technology and culture and with BVPCSI at the juncture, we provide a
+        cornucopia of opportunities to give you the best of both worlds.</p>
     </div>
 
-    <!-- <div class="slider-item" style="background-image: url('images/slider-2.jpg');">
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-10 text-center col-sm-12 element-animate">
-              <h1>Modern Design</h1>
-              <p class="mb-5 sub-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi unde impedit, necessitatibus, soluta sit quam minima expedita atque corrupti reiciendis.</p>
-              <p><a href="#" class="btn btn-white btn-outline-white px-3 py-3">Get Started</a> <a href="#" class="btn btn-link btn-white">Download</a></p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
   </section>
-  <!-- END slider -->
+  <!-- END hero -->
 
 
   <!-- <section class="section bg-light">
@@ -137,150 +290,403 @@
       </div>
     </section> -->
   <!-- END section -->
-  <section class="section element-animate">
-    <div class="container">
-      <div class="row align-items-center mb-5">
-        <div class="col-md-5 pr-md-5 mb-5">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">01</div>
-              <div class="block-41-line align-self-center mx-2"></div>
-              <div class="block-41-subheading-2">Technical</div>
-            </div>
-            <h2 class="block-41-heading mb-5">Tantalizing tech minds since 2013.</h2>
-            <div class="block-41-text">
-              <p>With excellent workshops and seminars by industry experts, you're sure to build a knack for latest
-                technologies and strive towards excellence. BVPCSI exposes you to diverse talented minds, truly enabling
-                thought.</p>
-            </div>
+
+  <style>
+    .content-section {
+      padding: 100px 0;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .content-section.dark {
+      background: #0a0a0a;
+    }
+
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .content-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .content-text {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .content-image {
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      font-size: 3rem;
+      font-weight: 800;
+      color: transparent;
+      -webkit-text-stroke: 2px #f4b214;
+      line-height: 1;
+    }
+
+    .section-divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, #f4b214 0%, transparent 100%);
+    }
+
+    .section-category {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #f4b214;
+      font-weight: 600;
+    }
+
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .section-description {
+      font-size: 1.125rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .content-image-wrapper {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .content-image-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, #f4b214 0%, transparent 50%);
+      border-radius: 12px;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .content-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .content-image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    .content-row.reverse {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .content-row.reverse .content-text {
+      order: 2;
+      animation: slideInRight 0.8s ease-out;
+    }
+
+    .content-row.reverse .content-image {
+      order: 1;
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    @media (max-width: 991px) {
+      .content-section {
+        padding: 60px 0;
+      }
+
+      .content-row,
+      .content-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .content-row.reverse .content-text,
+      .content-row.reverse .content-image {
+        order: unset;
+      }
+
+      .section-heading {
+        font-size: 2rem;
+      }
+
+      .section-number {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section-heading {
+        font-size: 1.75rem;
+      }
+
+      .section-description {
+        font-size: 1rem;
+      }
+    }
+  </style>
+
+  <section class="content-section">
+    <div class="content-wrapper">
+      <div class="content-row">
+        <div class="content-text">
+          <div class="section-label">
+            <div class="section-number">01</div>
+            <div class="section-divider"></div>
+            <div class="section-category">Technical</div>
+          </div>
+          <h2 class="section-heading">Tantalizing tech minds since 2013.</h2>
+          <div class="section-description">
+            <p>With excellent workshops and seminars by industry experts, you're sure to build a knack for latest
+              technologies and strive towards excellence. BVPCSI exposes you to diverse talented minds, truly enabling
+              thought.</p>
           </div>
         </div>
-        <div class="col-md-7">
-          <img src="images/MainPageImages/MainPageTechnical.jpg" alt="Technical" class="img-fluid">
+        <div class="content-image">
+          <div class="content-image-wrapper">
+            <img src="images/MainPageImages/MainPageTechnical.jpg" alt="Technical">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-bell-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Research Papers</h3>
-              <p>Prestigious CSI Journals regularly invite student authors to submit their research, reports and
-                findings on several topics relevant to the modern tech scenario</p>
-            </div>
-          </div>
+  <style>
+    .features-section {
+      padding: 100px 0;
+      background: #0a0a0a;
+      position: relative;
+    }
 
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .feature-card {
+      background: #000;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 40px 30px;
+      text-align: center;
+      transition: all 0.4s ease;
+      animation: fadeInUp 0.6s ease-out backwards;
+    }
+
+    .feature-card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .feature-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .feature-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      border-color: #f4b214;
+      box-shadow: 0 20px 40px rgba(244, 178, 20, 0.15);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(244, 178, 20, 0.1) 0%, rgba(244, 178, 20, 0.05) 100%);
+      border: 2px solid rgba(244, 178, 20, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: #f4b214;
+      transition: all 0.4s ease;
+    }
+
+    .feature-card:hover .feature-icon {
+      background: #f4b214;
+      color: #000;
+      transform: rotate(360deg);
+      border-color: #f4b214;
+    }
+
+    .feature-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .feature-card:hover .feature-title {
+      color: #f4b214;
+    }
+
+    .feature-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    @media (max-width: 991px) {
+      .features-section {
+        padding: 60px 0;
+      }
+
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .feature-card {
+        padding: 30px 24px;
+      }
+    }
+  </style>
+
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-bell-outline"></span>
         </div>
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-heart-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Projects</h3>
-              <p>BVPCSI in association with CSI encourage student members with grants upto 50k for intuitive and
-                innovative student projects</p>
-            </div>
-          </div>
+        <h3 class="feature-title">Research Papers</h3>
+        <p class="feature-description">Prestigious CSI Journals regularly invite student authors to submit their
+          research, reports and findings on several topics relevant to the modern tech scenario</p>
+      </div>
 
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-heart-outline"></span>
         </div>
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-bolt-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Competitions</h3>
-              <p>Regular Competitions like Design Dazzle and Hackathons are sure to purge your skills</p>
-            </div>
-          </div>
+        <h3 class="feature-title">Projects</h3>
+        <p class="feature-description">BVPCSI in association with CSI encourage student members with grants upto 50k for
+          intuitive and innovative student projects</p>
+      </div>
 
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-bolt-outline"></span>
+        </div>
+        <h3 class="feature-title">Competitions</h3>
+        <p class="feature-description">Regular Competitions like Design Dazzle and Hackathons are sure to purge your
+          skills</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section dark">
+    <div class="content-wrapper">
+      <div class="content-row reverse">
+        <div class="content-text">
+          <div class="section-label">
+            <div class="section-number">02</div>
+            <div class="section-divider"></div>
+            <div class="section-category">Cultural</div>
+          </div>
+          <h2 class="section-heading">You too seem to be a person of culture</h2>
+          <div class="section-description">
+            <p>Like Marcus Garvey said "A person without the knowledge of their past history, origin and culture is like
+              a tree without roots", we At BVPCSI we believe in holistic development of our members and provide them
+              with best cultural and social synergies.</p>
+          </div>
+        </div>
+        <div class="content-image">
+          <div class="content-image-wrapper">
+            <img src="images/MainPageImages/MainPageCultural.jpg" alt="Cultural">
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section element-animate bg-light">
-    <div class="container">
-      <div class="row align-items-center mb-5">
-        <div class="col-md-5 pl-md-5 mb-5 order-md-2">
-          <div class="block-41">
-            <div class="block-41-subheading d-flex">
-              <div class="block-41-number">02</div>
-              <div class="block-41-line align-self-center mx-2"></div>
-              <div class="block-41-subheading-2">Cultural</div>
-            </div>
-            <h2 class="block-41-heading mb-5">You too seem to be a person of culture</h2>
-            <div class="block-41-text">
-              <p>Like Marcus Garvey said "A person without the knowledge of their past history, origin and culture is
-                like a tree without roots", we At BVPCSI we believe in holistic development of our members and provide
-                them with best cultural and social synergies.</p>
-            </div>
-          </div>
+  <section class="features-section">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-bell-outline"></span>
         </div>
-        <div class="col-md-7 order-md-1">
-          <img src="images/MainPageImages/MainPageCultural.jpg" alt="Cultural" class="img-fluid">
+        <h3 class="feature-title">QAL</h3>
+        <p class="feature-description">With Quizing and Literature Society, BVPCSI offers quiz enthusiasts to
+          participate and conduct some of the best quizes. Questions that will tickle the intellect in you.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-heart-outline"></span>
         </div>
+        <h3 class="feature-title">SSS</h3>
+        <p class="feature-description">Society of Social Service aims to give back to society. Association with several
+          NGOs helps us in really making and leaving a mark.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <span class="ion-ios-bolt-outline"></span>
+        </div>
+        <h3 class="feature-title">Glitch</h3>
+        <p class="feature-description">Glitch, the gaming subchapter of BVPCSI, fosters a vibrant community for gamers,
+          blending competition, strategy, and innovation to elevate the gaming experience.</p>
       </div>
     </div>
   </section>
 
-  <section class="section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-bell-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">QAL</h3>
-              <p>With Quizing and Literature Society, BVPCSI offers quiz enthusiasts to participate and conduct some of
-                the best quizes. Questions that will tickle the intellect in you.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-heart-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">SSS</h3>
-              <p>Society of Social Service aims to give back to society. Association with several NGOs helps us in
-                really making and leaving a mark.</p>
-            </div>
-          </div>
-
-        </div>
-        <div class="col-md-6 col-lg-4 element-animate ">
-          <div class="media block-6 d-block text-center">
-            <div class="icon mb-3"><span class="ion-ios-bolt-outline"></span></div>
-            <div class="media-body">
-              <h3 class="heading">Glitch</h3>
-              <p>Glitch, the gaming subchapter of BVPCSI, fosters a vibrant community for gamers, blending competition,
-                strategy, and innovation to elevate the gaming experience.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background: #000; padding: 80px 0;">
+  <section class="events-section-main" style="background: #000; padding: 100px 0;">
     <style>
       /* Events Section Redesign */
+      .events-section-main {
+        position: relative;
+      }
+
       .events-header {
         text-align: center;
         margin-bottom: 60px;
       }
-      
+
       .events-header h2 {
         color: #fff;
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 1rem;
       }
-      
+
       .events-header p {
         color: rgba(255, 255, 255, 0.7);
         font-size: 1.125rem;
@@ -288,16 +694,23 @@
         margin: 0 auto;
         line-height: 1.6;
       }
-      
+
       .events-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 20px;
       }
-      
+
+      /* Ensure 5 items layout nicely */
+      @media (min-width: 992px) {
+        .events-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
       .event-card {
         background: #0a0a0a;
         border: 1px solid #222;
@@ -307,24 +720,24 @@
         text-decoration: none;
         display: block;
       }
-      
+
       .event-card:hover {
         transform: translateY(-4px);
         border-color: #f4b214;
         text-decoration: none;
       }
-      
+
       .event-card-image {
         width: 100%;
         aspect-ratio: 4/5;
         object-fit: cover;
         display: block;
       }
-      
+
       .event-card-content {
         padding: 20px;
       }
-      
+
       .event-card-title {
         color: #fff;
         font-size: 1.25rem;
@@ -332,88 +745,82 @@
         margin: 0;
         transition: color 0.3s ease;
       }
-      
+
       .event-card:hover .event-card-title {
         color: #f4b214;
       }
-      
+
       @media (max-width: 991.98px) {
         .events-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 24px;
         }
-        
+
         .events-header h2 {
           font-size: 2rem;
         }
       }
-      
+
       @media (max-width: 767.98px) {
         .events-grid {
           grid-template-columns: 1fr;
           gap: 20px;
         }
-        
+
         .events-header {
           margin-bottom: 40px;
         }
-        
+
         .events-header h2 {
           font-size: 1.75rem;
         }
-        
+
         .events-header p {
           font-size: 1rem;
         }
       }
     </style>
-    
+
     <div class="container">
-      <div class="events-header element-animate">
+      <div class="events-header">
         <h2>Events</h2>
-        <p>BVPCSI conducts events which invoke interests and passion among members towards new technologies and society; reaping and nurturing the leaders of tomorrow.</p>
+        <p>BVPCSI conducts events which invoke interests and passion among members towards new technologies and society;
+          reaping and nurturing the leaders of tomorrow.</p>
       </div>
-      
+
       <div class="events-grid">
-        <a href="CultPages/gst.html" class="event-card element-animate">
-          <img src="images/MainPageImages/gstimg.jpg" alt="Gareeb Shark Tank" class="event-card-image">
+        <a href="TechPages/techeventone.html" class="event-card">
+          <img src="images/EventsHomePage/algomania.jpeg" alt="Algomania" class="event-card-image">
           <div class="event-card-content">
-            <h3 class="event-card-title">Gareeb Shark Tank</h3>
+            <h3 class="event-card-title">Algomania</h3>
           </div>
         </a>
-        
-        <a href="CultPages/quizzRizz.html" class="event-card element-animate">
-          <img src="images/MainPageImages/quizrizz.jpeg" alt="Quiz Rizz" class="event-card-image">
+
+        <a href="CultPages/culteventtwo.html" class="event-card">
+          <img src="images/EventsHomePage/cstem2.0.jpeg" alt="CSTEM 2.0" class="event-card-image">
           <div class="event-card-content">
-            <h3 class="event-card-title">Quiz Rizz</h3>
+            <h3 class="event-card-title">CSTEM 2.0</h3>
           </div>
         </a>
-        
-        <a href="TechPages/techeventone.html" class="event-card element-animate">
-          <img src="images/MainPageImages/aimlws.jpeg" alt="AIML Workshop" class="event-card-image">
+
+        <a href="CultPages/culteventone.html" class="event-card">
+          <img src="images/EventsHomePage/NGO_25.jpeg" alt="NGO Drive 2025" class="event-card-image">
           <div class="event-card-content">
-            <h3 class="event-card-title">AIML Workshop</h3>
+            <h3 class="event-card-title">NGO Drive 2025</h3>
           </div>
         </a>
-        
-        <a href="CultPages/culteventone.html" class="event-card element-animate">
-          <img src="images/MainPageImages/designdazzle.jpeg" alt="Design Dazzle" class="event-card-image">
+
+        <a href="CultPages/culteventthree.html" class="event-card">
+          <img src="images/EventsHomePage/speaker_session.jpeg" alt="Speaker Session" class="event-card-image">
           <div class="event-card-content">
-            <h3 class="event-card-title">Design Dazzle</h3>
+            <h3 class="event-card-title">Speaker Session</h3>
           </div>
         </a>
-        
-        <a href="CultPages/culteventtwo.html" class="event-card element-animate">
-          <img src="images/MainPageImages/cstem.jpeg" alt="CSTEM" class="event-card-image">
+
+        <a href="TechPages/techeventone.html" class="event-card">
+          <img src="images/EventsHomePage/tech_baliya.jpeg" alt="Tech Baliya" class="event-card-image">
           <div class="event-card-content">
-            <h3 class="event-card-title">CSTEM</h3>
-          </div>
-        </a>
-        
-        <a href="CultPages/culteventthree.html" class="event-card element-animate">
-          <img src="images/MainPageImages/vinaydanam.jpeg" alt="Vinay Danam" class="event-card-image">
-          <div class="event-card-content">
-            <h3 class="event-card-title">Vinay Danam</h3>
+            <h3 class="event-card-title">Tech Baliya</h3>
           </div>
         </a>
       </div>
@@ -575,9 +982,9 @@
               <span class="d-block">Address:</span>
               <span class="text-white">A-4, Paschim Vihar, New Delhi 110063</span>
             </li>
-            <li class="d-block"><span class="d-block">Telephone:</span><span class="text-white">+91 97114 98125</span>
+
             </li>
-            <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi2023@gmail.com</span>
+            <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi.2026@gmail.com</span>
             </li>
           </ul>
         </div>

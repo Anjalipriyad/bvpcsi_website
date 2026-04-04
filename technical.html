@@ -1,186 +1,371 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Technical</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
+<head>
+  <title>Technical</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800" rel="stylesheet">
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
 
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    
-    <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand " href="index.html">
-            <img class="logo-icon" src="images/MainPageImages/logo.png">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
 
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav pl-md-5">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <!-- <li class="nav-item">
+  <!-- Theme Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Page-specific styles */
+    .tech-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url('images/TechImages/techbg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .tech-hero-content {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .tech-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tech-hero p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .events-year-section {
+      padding: 80px 0;
+      background: #000;
+    }
+
+    .events-year-section.alt {
+      background: #0a0a0a;
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .year-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(244, 178, 20, 0.1);
+      border: 2px solid #f4b214;
+      border-radius: 30px;
+      color: #f4b214;
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .section-title-wrapper h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-wrapper p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .tech-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .tech-event-card {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .tech-event-card:hover {
+      transform: translateY(-8px);
+      border-color: #f4b214;
+      box-shadow: 0 20px 60px rgba(244, 178, 20, 0.2);
+      text-decoration: none;
+    }
+
+    .tech-event-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .tech-event-content {
+      padding: 30px;
+    }
+
+    .tech-event-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease;
+    }
+
+    .tech-event-card:hover .tech-event-title {
+      color: #f4b214;
+    }
+
+    .tech-event-description {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .tech-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .tech-events-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-title-wrapper h2 {
+        font-size: 2rem;
+      }
+
+      .events-year-section {
+        padding: 60px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand " href="index.html">
+          <img class="logo-icon" src="images/MainPageImages/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05"
+          aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav pl-md-5">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="blog.html">Blog</a>
               </li> -->
-              <li class="nav-item">
-                <a class="nav-link active" href="technical.html">Technical</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="cultural.html">Cultural</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="subchapters.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Subchapters</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="subchapters.html">Quizzing and Literature</a>
-                  <a class="dropdown-item" href="subchapters.html">SSS</a>
-                  <a class="dropdown-item" href="subchapters.html">Glitch</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- END header -->
-    
-    <section class="home-slider inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('images/TechImages/techbg.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate">
-              <h1>Technical</h1>
-              <p class="mb-5 sub-text">Tantalizing tech minds since 2013</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- END slider -->
-  
- 
-  
-    <section class="section border-t pb-0">
-      <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">Check out our Technical Events</h2>
-            <p class="mb-5 lead">With excellent workshops and seminars by industry experts, you're sure to build a knack for latest technologies and strive towards excellence. BVPCSI exposes you to diverse talented minds, truly enabling thought.</p>
-          </div>
+            <li class="nav-item">
+              <a class="nav-link active" href="technical.html">Technical</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cultural.html">Cultural</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="subchapters.html" id="dropdown04" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">Subchapters</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+                <a class="dropdown-item" href="subchapters.html">Quizzing and Literature</a>
+                <a class="dropdown-item" href="subchapters.html">SSS</a>
+                <a class="dropdown-item" href="subchapters.html">Glitch</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="TechPages/techeventone.html" class="link-thumbnail">
-              <h3>AIML Workshop</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/MainPageImages/aimlws.jpeg" class="img-fluid" style="aspect-ratio: 9/11;">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="TechPages/techeventtwo.html" class="link-thumbnail">
-              <h3>Where To Start-BITWISE</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/MainPageImages/bitwise.jpeg" class="img-fluid" style="aspect-ratio: 9/11;">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="TechPages/techeventthree.html" class="link-thumbnail">
-              <h3>Domain Dive</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/MainPageImages/domaindive.jpeg" class="img-fluid" style="aspect-ratio: 9/11;">
-            </a>
-          </div>
-          
-        </div>
-        
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <section class="tech-hero">
+    <div class="tech-hero-content">
+      <h1>Technical</h1>
+      <p>Tantalizing tech minds since 2013</p>
+    </div>
+  </section>
+  <!-- END hero -->
+
+  <!-- Current Events Section -->
+  <section class="events-year-section">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="year-badge">2025-26</span>
+        <h2>Current Technical Events</h2>
+        <p>Our latest workshops, competitions, and seminars designed to enhance your technical skills and expose you to
+          cutting-edge technologies.</p>
       </div>
-    </section>
-    <div style="height: 10rem"></div>
-    <!-- END section -->
 
-
-
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4 mb-5">
-            <h3>About BVPCSI</h3>
-            <p class="mb-5">The amalgamation of technology and culture and with BVPCSI at the juncture, we provide a cornucopia of opportunities to give you the best of both worlds.</p>
-            <ul class="list-unstyled footer-link d-flex footer-social">
-              <li><a href="https://twitter.com/BVPCSI" class="p-2"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="https://www.facebook.com/bvcoecsi" class="p-2"><span class="fa fa-facebook"></span></a></li>
-              <!-- <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li> -->
-              <li><a href="https://www.instagram.com/bvpcsi/" class="p-2"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-
+      <div class="tech-events-grid">
+        <a href="TechPages/techeventone.html" class="tech-event-card">
+          <img src="images/EventsHomePage/algomania.jpeg" alt="Algomania" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">Algomania</h3>
           </div>
-          <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Contact Info</h3>
-            <ul class="list-unstyled footer-link">
-              <li class="d-block">
-                <span class="d-block">Address:</span>
-                <span class="text-white">A-4, Paschim Vihar, New Delhi 110063</span></li>
-              <li class="d-block"><span class="d-block">Telephone:</span><span class="text-white">+91 97114 98125</span></li>
-              <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi2023@gmail.com</span></li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-5">
-            <h3>Quick Links</h3>
-            <ul class="list-unstyled footer-link">
-               <li><a href="index.html">Homepage</a></li>
-              <li><a href="technical.html">Tech</a></li>
-              <li><a href="cultural.html">Cultural</a></li>
-              <li><a href="subchapters.html">Sub-Chapters</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
+        </a>
 
+        <a href="TechPages/techeventone.html" class="tech-event-card">
+          <img src="images/EventsHomePage/tech_baliya.jpeg" alt="Tech Baliya" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">Tech Baliya</h3>
           </div>
+        </a>
+
+        <a href="TechPages/techeventone.html" class="tech-event-card">
+          <img src="images/EventsHomePage/speaker_session.jpeg" alt="Speaker Session" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">Speaker Session</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Previous Events Section -->
+  <section class="events-year-section alt">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="year-badge">Previous Years</span>
+        <h2>Previous Technical Events</h2>
+        <p>With excellent workshops and seminars by industry experts, you're sure to build a knack for latest
+          technologies and strive towards excellence.</p>
+      </div>
+
+      <div class="tech-events-grid">
+        <a href="TechPages/techeventone.html" class="tech-event-card">
+          <img src="images/MainPageImages/aimlws.jpeg" alt="AIML Workshop" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">AIML Workshop</h3>
+          </div>
+        </a>
+
+        <a href="TechPages/techeventtwo.html" class="tech-event-card">
+          <img src="images/MainPageImages/bitwise.jpeg" alt="Where To Start-BITWISE" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">Where To Start - BITWISE</h3>
+          </div>
+        </a>
+
+        <a href="TechPages/techeventthree.html" class="tech-event-card">
+          <img src="images/MainPageImages/domaindive.jpeg" alt="Domain Dive" class="tech-event-image">
+          <div class="tech-event-content">
+            <h3 class="tech-event-title">Domain Dive</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END events sections -->
+
+
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-4 mb-5">
+          <h3>About BVPCSI</h3>
+          <p class="mb-5">The amalgamation of technology and culture and with BVPCSI at the juncture, we provide a
+            cornucopia of opportunities to give you the best of both worlds.</p>
+          <ul class="list-unstyled footer-link d-flex footer-social">
+            <li><a href="https://twitter.com/BVPCSI" class="p-2"><span class="fa fa-twitter"></span></a></li>
+            <li><a href="https://www.facebook.com/bvcoecsi" class="p-2"><span class="fa fa-facebook"></span></a></li>
+            <!-- <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li> -->
+            <li><a href="https://www.instagram.com/bvpcsi/" class="p-2"><span class="fa fa-instagram"></span></a></li>
+          </ul>
+
         </div>
-        <div class="row">
-          <div class="col-12 text-md-center text-left">
-            <p>&copy; BVPCSI 2025 All Rights Reserved.  <br> Designed &amp; Developed by the Web Team of BVPCSI </p>
-          </div>
+        <div class="col-md-5 mb-5 pl-md-5">
+          <h3>Contact Info</h3>
+          <ul class="list-unstyled footer-link">
+            <li class="d-block">
+              <span class="d-block">Address:</span>
+              <span class="text-white">A-4, Paschim Vihar, New Delhi 110063</span>
+            </li>
+            <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi.2026@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-5">
+          <h3>Quick Links</h3>
+          <ul class="list-unstyled footer-link">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="technical.html">Tech</a></li>
+            <li><a href="cultural.html">Cultural</a></li>
+            <li><a href="subchapters.html">Sub-Chapters</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+
         </div>
       </div>
-    </footer>
-    <!-- END footer -->
+      <div class="row">
+        <div class="col-12 text-md-center text-left">
+          <p>&copy; BVPCSI 2025 All Rights Reserved. <br> Designed &amp; Developed by the Web Team of BVPCSI </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- END footer -->
 
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+  <!-- loader -->
+  <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#f4b214" />
+    </svg></div>
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

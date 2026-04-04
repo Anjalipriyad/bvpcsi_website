@@ -17,6 +17,257 @@
 
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      /* Hero Section */
+      .subchapters-hero {
+        position: relative;
+        height: 60vh;
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background: #000;
+      }
+      
+      .subchapters-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('images/SubChapImages/subchappagebackground.jpg') center/cover no-repeat;
+        opacity: 0.3;
+      }
+      
+      .subchapters-hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        max-width: 800px;
+        padding: 0 20px;
+      }
+      
+      .subchapters-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #fff;
+      }
+      
+      .subchapters-hero p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+      }
+      
+      /* Overview Cards Section */
+      .overview-section {
+        background: #0a0a0a;
+        padding: 80px 0;
+      }
+      
+      .subchapter-card {
+        background: #000;
+        border: 1px solid #222;
+        border-radius: 12px;
+        padding: 40px 30px;
+        text-align: center;
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .subchapter-card:hover {
+        transform: translateY(-8px);
+        border-color: #f4b214;
+        box-shadow: 0 8px 30px rgba(244, 178, 20, 0.15);
+      }
+      
+      .subchapter-icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(244, 178, 20, 0.1);
+        border: 2px solid #f4b214;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 24px;
+        transition: all 0.3s ease;
+      }
+      
+      .subchapter-card:hover .subchapter-icon {
+        background: #f4b214;
+        transform: scale(1.1);
+      }
+      
+      .subchapter-icon span {
+        font-size: 2.5rem;
+        color: #f4b214;
+        transition: color 0.3s ease;
+      }
+      
+      .subchapter-card:hover .subchapter-icon span {
+        color: #000;
+      }
+      
+      .subchapter-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #fff;
+      }
+      
+      .subchapter-card p {
+        color: rgba(255, 255, 255, 0.7);
+        line-height: 1.7;
+        margin: 0;
+      }
+      
+      /* Events Section */
+      .events-section {
+        padding: 80px 0;
+      }
+      
+      .events-section:nth-child(even) {
+        background: #0a0a0a;
+      }
+      
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        color: #fff;
+      }
+      
+      .section-header p {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+      }
+      
+      .event-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #0a0a0a;
+        border: 1px solid #222;
+        transition: all 0.3s ease;
+        height: 100%;
+        display: block;
+        text-decoration: none;
+      }
+      
+      .event-card:hover {
+        transform: translateY(-6px);
+        border-color: #f4b214;
+        box-shadow: 0 8px 30px rgba(244, 178, 20, 0.2);
+        text-decoration: none;
+      }
+      
+      .event-image-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 133.33%;
+        overflow: hidden;
+        background: #000;
+      }
+      
+      .event-image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .event-card:hover .event-image-wrapper img {
+        transform: scale(1.05);
+      }
+      
+      .event-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7) 60%, transparent);
+        padding: 30px 20px 20px;
+        transition: all 0.3s ease;
+      }
+      
+      .event-card:hover .event-overlay {
+        background: linear-gradient(to top, rgba(244,178,20,0.95), rgba(244,178,20,0.7) 60%, transparent);
+      }
+      
+      .event-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #fff;
+        margin: 0;
+        line-height: 1.4;
+        transition: color 0.3s ease;
+      }
+      
+      .event-card:hover .event-title {
+        color: #000;
+      }
+      
+      .event-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        background: rgba(244, 178, 20, 0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.3s ease;
+      }
+      
+      .event-card:hover .event-icon {
+        opacity: 1;
+        transform: scale(1);
+      }
+      
+      .event-icon span {
+        color: #000;
+        font-size: 1.5rem;
+      }
+      
+      @media (max-width: 768px) {
+        .subchapters-hero h1 {
+          font-size: 2.5rem;
+        }
+        
+        .section-header h2 {
+          font-size: 2rem;
+        }
+        
+        .event-card,
+        .subchapter-card {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
   </head>
   <body>
     
@@ -65,178 +316,212 @@
     </header>
     <!-- END header -->
     
-    <section class="home-slider inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('images/SubChapImages/subchappagebackground.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate">
-              <h1>Subchapters</h1>
-              <p class="mb-5">BVPCSI expanded its wings in 2017 with the inception of its three new subchapters, Quizzing and Literature, Society for Social Services and Glitch, the gaming sub chapter.</p>
-              <!--<p><a href="#" class="btn btn-white btn-outline-white px-4 py-3">Explore</a></p>-->
-            </div>
-          </div>
-        </div>
-
+    <!-- Hero Section -->
+    <section class="subchapters-hero">
+      <div class="subchapters-hero-content">
+        <h1>Subchapters</h1>
+        <p>BVPCSI expanded its wings in 2017 with the inception of its three new subchapters, Quizzing and Literature, Society for Social Services and Glitch, the gaming sub chapter.</p>
       </div>
     </section>
-    <!-- END slider -->
-	
-	<section class="section bg-light">
+    
+    <!-- Overview Section -->
+	<section class="overview-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-lg-4 element-animate ">
-            <div class="media block-6 d-block text-center">
-              <div class="icon mb-3"><span class="ion-ios-bell-outline"></span></div>
-              <div class="media-body">
-                <h3 class="heading">QAL</h3>
-                <p>With Quizing and Literature Society, BVPCSI offers quiz enthusiasts to participate and conduct some of the best quizes. Questions that will tickle the intellect in you.</p>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="subchapter-card">
+              <div class="subchapter-icon">
+                <span class="ion-ios-bell-outline"></span>
               </div>
+              <h3>QAL</h3>
+              <p>With Quizing and Literature Society, BVPCSI offers quiz enthusiasts to participate and conduct some of the best quizes. Questions that will tickle the intellect in you.</p>
             </div>
-
           </div>
-          <div class="col-md-6 col-lg-4 element-animate ">
-            <div class="media block-6 d-block text-center">
-              <div class="icon mb-3"><span class="ion-ios-heart-outline"></span></div>
-              <div class="media-body">
-                <h3 class="heading">SSS</h3>
-                <p>Society of Social Service aims to give back to society. Association with several NGOs helps us in really making and leaving a mark.</p>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="subchapter-card">
+              <div class="subchapter-icon">
+                <span class="ion-ios-heart-outline"></span>
               </div>
+              <h3>SSS</h3>
+              <p>Society of Social Service aims to give back to society. Association with several NGOs helps us in really making and leaving a mark.</p>
             </div>
-
           </div>
-          <div class="col-md-6 col-lg-4 element-animate ">
-            <div class="media block-6 d-block text-center">
-              <div class="icon mb-3"><span class="ion-ios-bolt-outline"></span></div>
-              <div class="media-body">
-                <h3 class="heading">GLITCH</h3>
-                <p>The GLITCH sub chapter of BvpCSI hosts competitive gaming events outside the academics. You know you are in for a ride when the day comes.</p>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="subchapter-card">
+              <div class="subchapter-icon">
+                <span class="ion-ios-bolt-outline"></span>
               </div>
+              <h3>GLITCH</h3>
+              <p>The GLITCH sub chapter of BvpCSI hosts competitive gaming events outside the academics. You know you are in for a ride when the day comes.</p>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 	
+	<!-- QAL Events Section -->
+  <section class="events-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Quizzing and Literature</h2>
+          <p>Quizzing society, the only place in the college where a Vulcan salute won't get you trash canned.</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/qaleventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/qal1 2.jpeg" alt="QAL Event">
+                <div class="event-overlay">
+                  <h3 class="event-title">QUIZZING AND LITERATURE (QAL) – Igniting Minds, One Quiz at a Time</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/qaleventtwo.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/qal2.jpeg" alt="Quiz Quest">
+                <div class="event-overlay">
+                  <h3 class="event-title">QUIZ QUEST</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/qaleventthree.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/qal3.jpg" alt="Quiz Rizz">
+                <div class="event-overlay">
+                  <h3 class="event-title">QUIZ RIZZ</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- GLITCH Events Section -->
+    <section class="events-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>GLITCH</h2>
+          <p>The GLITCH sub-chapter of BvpCSI aims to bring gaming enthusiasts from different domains together bridging the gap between academics and gaming passion.</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/glitcheventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/glitch1.jpeg" alt="Concorde 3.0">
+                <div class="event-overlay">
+                  <h3 class="event-title">CONCORDE 3.0 – The Ultimate Online Gaming Event</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/glitcheventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/glitch1.jpeg" alt="Concorde 3.0">
+                <div class="event-overlay">
+                  <h3 class="event-title">CONCORDE 3.0 – The Ultimate Online Gaming Event</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/glitcheventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/QalEventOne/glitch1.jpeg" alt="Concorde 3.0">
+                <div class="event-overlay">
+                  <h3 class="event-title">CONCORDE 3.0 – The Ultimate Online Gaming Event</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 	
-  <section class="section border-t pb-0">
+	<!-- SSS Events Section -->
+	<section class="events-section">
       <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">Quizzing and Literature</h2>
-            <p class="mb-5 lead">Quizzing society, the only place in the college where a Vulcan salute won’t get you trash canned.</p>
+        <div class="section-header">
+          <h2>Society of Social Service</h2>
+          <p>We are not in it for the income, we are in it for the outcome.</p>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/ssseventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/SssEventOne/SSS1.jpeg" alt="Mind at Ease">
+                <div class="event-overlay">
+                  <h3 class="event-title">Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/ssseventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/SssEventOne/SSS4.jpeg" alt="Mind at Ease">
+                <div class="event-overlay">
+                  <h3 class="event-title">Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <div class="col-md-6 col-lg-4 mb-4">
+            <a href="SubChapPages/ssseventone.html" class="event-card">
+              <div class="event-image-wrapper">
+                <img src="images/SubChapImages/SssEventOne/SSS1.jpeg" alt="Mind at Ease">
+                <div class="event-overlay">
+                  <h3 class="event-title">Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI</h3>
+                </div>
+                <div class="event-icon">
+                  <span class="ion-plus"></span>
+                </div>
+              </div>
+            </a>
           </div>
         </div>
       </div>
-     <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/qaleventone.html" class="link-thumbnail">
-              <h3>QUIZZING AND LITERATURE (QAL) – Igniting Minds, One Quiz at a Time
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/qal1 2.jpeg"   class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/qaleventtwo.html" class="link-thumbnail">
-              <h3>QUIZ QUEST</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/qal2.jpeg"   class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/qaleventthree.html" class="link-thumbnail">
-              <h3>QUIZ RIZZ</h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/qal3.jpg"   class="img-fluid">
-            </a>
-          </div>
-      </div>
-    </div>
     </section>
-    <section class="section border-t pb-0">
-      <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">GLITCH</h2>
-            <p class="mb-5 lead">The GLITCH sub-chapter of BvpCSI aims to bring gaming enthusiasts from different domains together bridging the gap between academics and gaming passion.</p>
-          </div>
-        </div>
-      </div>
-     <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/glitcheventone.html" class="link-thumbnail">
-              <h3>CONCORDE 3.0 – The Ultimate Online Gaming Event
-
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/glitch1.jpeg"   class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/glitcheventone.html" class="link-thumbnail">
-              <h3>CONCORDE 3.0 – The Ultimate Online Gaming Event
-
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/glitch1.jpeg"   class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/glitcheventone.html" class="link-thumbnail">
-              <h3>CONCORDE 3.0 – The Ultimate Online Gaming Event
-
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/QalEventOne/glitch1.jpeg"   class="img-fluid">
-            </a>
-          </div>
-      </div>
-    </div>
-    </section>
-	
-	<section class="section border-t pb-0">
-      <div class="container">
-        <div class="row justify-content-center mb-5 element-animate">
-          <div class="col-md-8 text-center">
-            <h2 class=" heading mb-4">Society of Social Service</h2>
-            <p class="mb-5 lead">We are not in it for the income, we are in it for the outcome.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row no-gutters">
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/ssseventone.html" class="link-thumbnail">
-              <h3>Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/SssEventOne/SSS1.jpeg"   class="img-fluid">
-            </a>
-          </div>
-          <div class="col-md-4 element-animate">
-            <a href="SubChapPages/ssseventone.html" class="link-thumbnail">
-              <h3>Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/SssEventOne/SSS4.jpeg"   class="img-fluid">
-            </a>
-          </div>
-         <div class="col-md-4 element-animate">
-            <a href="SubChapPages/ssseventone.html" class="link-thumbnail">
-              <h3>Mind at Ease – A Stress-Busting Experience by SSS under BVP CSI
-              </h3>
-              <span class="ion-plus icon"></span>
-              <img src="images/SubChapImages/SssEventOne/SSS1.jpeg"   class="img-fluid">
-            </a>
-          </div>
-      </div>
-      <br><br>
-    </section>
-	<div style="height: 10rem"></div>
     <!-- END section -->
 
 
@@ -261,8 +546,7 @@
               <li class="d-block">
                 <span class="d-block">Address:</span>
                 <span class="text-white">A-4, Paschim Vihar, New Delhi 110063</span></li>
-              <li class="d-block"><span class="d-block">Telephone:</span><span class="text-white">+91 97114 98125</span></li>
-              <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi2023@gmail.com</span></li>
+              <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi.2026@gmail.com</span></li>
             </ul>
           </div>
           <div class="col-md-3 mb-5">

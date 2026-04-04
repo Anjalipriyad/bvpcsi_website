@@ -18,6 +18,153 @@
 
   <!-- Theme Style -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Page-specific styles */
+    .cultural-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%), url('images/CultImages/cultpagebackground.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .cultural-hero-content {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cultural-hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .cultural-hero p {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cultural-section {
+      padding: 80px 0;
+      background: #000;
+    }
+
+    .cultural-section.alt {
+      background: #0a0a0a;
+    }
+
+    .year-badge {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(244, 178, 20, 0.1);
+      border: 2px solid #f4b214;
+      border-radius: 30px;
+      color: #f4b214;
+      font-weight: 700;
+      font-size: 0.875rem;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .section-title-wrapper {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-title-wrapper h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .section-title-wrapper p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.7);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    .cultural-events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .cultural-event-card {
+      background: #0a0a0a;
+      border: 1px solid #222;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .cultural-event-card:hover {
+      transform: translateY(-8px);
+      border-color: #f4b214;
+      box-shadow: 0 20px 60px rgba(244, 178, 20, 0.2);
+      text-decoration: none;
+    }
+
+    .cultural-event-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cultural-event-content {
+      padding: 30px;
+    }
+
+    .cultural-event-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      transition: color 0.3s ease;
+    }
+
+    .cultural-event-card:hover .cultural-event-title {
+      color: #f4b214;
+    }
+
+    @media (max-width: 768px) {
+      .cultural-hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .cultural-events-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-title-wrapper h2 {
+        font-size: 2rem;
+      }
+
+      .cultural-section {
+        padding: 60px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -69,128 +216,135 @@
   </header>
   <!-- END header -->
 
-  <section class="home-slider inner-page owl-carousel">
-    <div class="slider-item" style="background-image: url('images/CultImages/cultpagebackground.jpg');">
+  <section class="cultural-hero">
+    <div class="cultural-hero-content">
+      <h1>Cultural</h1>
+      <p>You too seem to be a person of culture.</p>
+    </div>
+  </section>
+  <!-- END hero -->
 
-      <div class="container">
-        <div class="row slider-text align-items-center justify-content-center">
-          <div class="col-md-8 text-center col-sm-12 element-animate">
-            <h1>Cultural</h1>
-            <p class="mb-5">You too seem to be a person of culture.</p>
+  <!-- Current Cultural Events Section -->
+  <section class="cultural-section">
+    <div class="container">
+      <div class="section-title-wrapper">
+        <span class="year-badge">2025-26</span>
+        <h2>Current Cultural Events</h2>
+        <p>Like Marcus Garvey said "A person without the knowledge of their past history, origin and culture is like a
+          tree without roots", at BVPCSI we believe in holistic development of our members and provide them with best
+          cultural and social synergies.</p>
+      </div>
+
+      <div class="cultural-events-grid">
+        <a href="CultPages/culteventtwo.html" class="cultural-event-card">
+          <img src="images/EventsHomePage/cstem2.0.jpeg" alt="CSTEM 2.0" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">CSTEM 2.0</h3>
           </div>
-        </div>
-      </div>
+        </a>
 
+        <a href="CultPages/culteventone.html" class="cultural-event-card">
+          <img src="images/EventsHomePage/NGO_25.jpeg" alt="NGO Drive 2025" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">NGO Drive 2025</h3>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
-  <!-- END header -->
 
-
-  <!-- END slider -->
-
-
-
-  <section class="section border-t pb-0">
+  <!-- Previous Cultural Events Section -->
+  <section class="cultural-section alt">
     <div class="container">
-      <div class="row justify-content-center mb-5 element-animate">
-        <div class="col-md-8 text-center">
-          <h2 class=" heading mb-4">Check out our Cultural Events and Subchapters</h2>
-          <p class="mb-5 lead">Like Marcus Garvey said "A person without the knowledge of their past history, origin and
-            culture is like a tree without roots", at BVPCSI we believe in holistic development of our members and
-            provide them with best cultural and social synergies.</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row no-gutters">
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/culteventone.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>Design Dazzle</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/CultEventOne/designPoster.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/culteventtwo.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>C-STEM</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/CultEventTwo/poster.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/culteventthree.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>Donation Drive</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/CultEventOne/posterDonation.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/quizzRizz.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>Quiz Rizz</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/quizRizzPoster.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/digidarzi.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>Digi Darzee</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/digidarziPoster.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/gst.html" class="link-thumbnail" style="max-height: 43vh;">
-            <h3>Gareeb Shark Tank</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/gstPoster.jpg" class="img-fluid">
-          </a>
-        </div>
-
+      <div class="section-title-wrapper">
+        <span class="year-badge">Previous Years</span>
+        <h2>Previous Cultural Events and Subchapters</h2>
+        <p>Explore our rich history of cultural events, subchapter activities, and community initiatives that have
+          shaped our vibrant culture.</p>
       </div>
 
+      <div class="cultural-events-grid">
+        <a href="CultPages/culteventone.html" class="cultural-event-card">
+          <img src="images/CultImages/CultEventOne/designPoster.jpg" alt="Design Dazzle" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Design Dazzle</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/culteventtwo.html" class="cultural-event-card">
+          <img src="images/CultImages/CultEventTwo/poster.jpg" alt="C-STEM" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">C-STEM</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/culteventthree.html" class="cultural-event-card">
+          <img src="images/CultImages/CultEventOne/posterDonation.jpg" alt="Donation Drive"
+            class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Donation Drive</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/quizzRizz.html" class="cultural-event-card">
+          <img src="images/CultImages/quizRizzPoster.jpg" alt="Quiz Rizz" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Quiz Rizz</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/digidarzi.html" class="cultural-event-card">
+          <img src="images/CultImages/digidarziPoster.jpg" alt="Digi Darzee" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Digi Darzee</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/gst.html" class="cultural-event-card">
+          <img src="images/CultImages/gstPoster.jpg" alt="Gareeb Shark Tank" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Gareeb Shark Tank</h3>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
 
-
-  <section class="section border-t pb-0">
+  <!-- Felicity Section -->
+  <section class="cultural-section">
     <div class="container">
-      <div class="row justify-content-center mb-5 element-animate">
-        <div class="col-md-8 text-center">
-          <h2 class=" heading mb-4">Felicity</h2>
-          <p class="mb-5 lead">The Techno-Cultural of BVPCSI.</p>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row no-gutters">
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/feleventone.html" class="link-thumbnail">
-            <h3>Manchkrit – Street Play Competition</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/FeliEventOne/feleventone.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/feleventtwo.html" class="link-thumbnail">
-            <h3>Football competition</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/FeliEventOne/feleventtwo.jpg" class="img-fluid">
-          </a>
-        </div>
-        <div class="col-md-4 element-animate">
-          <a href="CultPages/feleventthree.html" class="link-thumbnail">
-            <h3>Matki Phod</h3>
-            <span class="ion-plus icon"></span>
-            <img src="images/CultImages/FeliEventOne/feleventthree.jpg" class="img-fluid">
-          </a>
-        </div>
-
+      <div class="section-title-wrapper">
+        <h2>Felicity</h2>
+        <p>The Techno-Cultural of BVPCSI.</p>
       </div>
 
+      <div class="cultural-events-grid">
+        <a href="CultPages/feleventone.html" class="cultural-event-card">
+          <img src="images/CultImages/FeliEventOne/feleventone.jpg" alt="Manchkrit – Street Play Competition"
+            class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Manchkrit – Street Play Competition</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/feleventtwo.html" class="cultural-event-card">
+          <img src="images/CultImages/FeliEventOne/feleventtwo.jpg" alt="Football competition"
+            class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Football Competition</h3>
+          </div>
+        </a>
+
+        <a href="CultPages/feleventthree.html" class="cultural-event-card">
+          <img src="images/CultImages/FeliEventOne/feleventthree.jpg" alt="Matki Phod" class="cultural-event-image">
+          <div class="cultural-event-content">
+            <h3 class="cultural-event-title">Matki Phod</h3>
+          </div>
+        </a>
+      </div>
     </div>
   </section>
-  <div style="height: 10rem"></div>
-  <!-- END section -->
+  <!-- END events sections -->
 
 
 
@@ -216,9 +370,7 @@
               <span class="d-block">Address:</span>
               <span class="text-white">A-4, Paschim Vihar, New Delhi 110063</span>
             </li>
-            <li class="d-block"><span class="d-block">Telephone:</span><span class="text-white">+91 97114 98125</span>
-            </li>
-            <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi2023@gmail.com</span>
+            <li class="d-block"><span class="d-block">Email:</span><span class="text-white">bvpcsi.2026@gmail.com</span>
             </li>
           </ul>
         </div>
