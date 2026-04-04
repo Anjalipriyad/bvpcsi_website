@@ -80,89 +80,264 @@
     </section>
     <!-- END slider -->
 
-    <section class="section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 mb-5 order-2">
-		  
-		  <!-- ========================
-			VALIDATION SCRIPT
-		  ============================= -->
-
-			<script>
-				function validateForm() {
-					var w = document.forms["MainSiteForm"]["name"].value;
-					var x = document.forms["MainSiteForm"]["email"].value;
-					var y = document.forms["MainSiteForm"]["message"].value;
-					var z = document.forms["MainSiteForm"]["message"].value;
-					if (w != "" && x != "" && y != "" && z != "") {
-						return true;
-					} else{
-						alert("Please fill out all fields");
-						return false;
-					}
-				}
-			</script>
-
-		  <!-- ========================
-			VALIDATION SCRIPT END
-		  ============================= -->
+    <section class="section" style="background: #000; padding: 80px 0;">
+      <style>
+        /* Contact Page Redesign */
+        .contact-wrapper {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+        
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 60px;
+          align-items: start;
+        }
+        
+        /* Form Styling */
+        .contact-form-container {
+          background: #0a0a0a;
+          border: 1px solid #222;
+          border-radius: 8px;
+          padding: 40px;
+        }
+        
+        .contact-form-container h3 {
+          color: #fff;
+          font-size: 1.75rem;
+          font-weight: 700;
+          margin-bottom: 10px;
+        }
+        
+        .contact-form-container .form-subtitle {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.95rem;
+          margin-bottom: 30px;
+        }
+        
+        .contact-form-container .form-group {
+          margin-bottom: 20px;
+        }
+        
+        .contact-form-container label {
+          display: block;
+          color: rgba(255, 255, 255, 0.8);
+          font-size: 0.9rem;
+          font-weight: 500;
+          margin-bottom: 8px;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+        
+        .contact-form-container input[type="text"],
+        .contact-form-container input[type="email"],
+        .contact-form-container textarea {
+          width: 100%;
+          background: #000;
+          border: 1px solid #333;
+          border-radius: 6px;
+          padding: 12px 16px;
+          color: #fff;
+          font-size: 1rem;
+          transition: border-color 0.3s ease;
+        }
+        
+        .contact-form-container input[type="text"]:focus,
+        .contact-form-container input[type="email"]:focus,
+        .contact-form-container textarea:focus {
+          outline: none;
+          border-color: #f4b214;
+        }
+        
+        .contact-form-container textarea {
+          resize: vertical;
+          min-height: 150px;
+        }
+        
+        .contact-form-container .btn-submit {
+          background: #f4b214;
+          color: #000;
+          border: none;
+          padding: 14px 32px;
+          font-size: 1rem;
+          font-weight: 600;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+        
+        .contact-form-container .btn-submit:hover {
+          transform: translateY(-2px);
+          opacity: 0.9;
+        }
+        
+        /* Contact Info Styling */
+        .contact-info-container h3 {
+          color: #fff;
+          font-size: 1.75rem;
+          font-weight: 700;
+          margin-bottom: 30px;
+        }
+        
+        .contact-info-item {
+          background: #0a0a0a;
+          border: 1px solid #222;
+          border-radius: 8px;
+          padding: 24px;
+          margin-bottom: 20px;
+          display: flex;
+          align-items: start;
+          gap: 20px;
+        }
+        
+        .contact-info-icon {
+          width: 48px;
+          height: 48px;
+          background: #f4b214;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        
+        .contact-info-icon i,
+        .contact-info-icon span {
+          font-size: 20px;
+          color: #000;
+        }
+        
+        .contact-info-content h4 {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 0.85rem;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin: 0 0 8px 0;
+        }
+        
+        .contact-info-content p {
+          color: #fff;
+          font-size: 1rem;
+          margin: 0;
+          line-height: 1.6;
+        }
+        
+        .contact-info-content a {
+          color: #fff;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+        
+        .contact-info-content a:hover {
+          color: #f4b214;
+        }
+        
+        /* Map Container */
+        .map-container {
+          background: #0a0a0a;
+          border: 1px solid #222;
+          border-radius: 8px;
+          overflow: hidden;
+          margin-top: 20px;
+        }
+        
+        .map-container iframe {
+          width: 100%;
+          height: 300px;
+          display: block;
+          border: none;
+        }
+        
+        @media (max-width: 991.98px) {
+          .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+        }
+        
+        @media (max-width: 767.98px) {
+          .contact-form-container {
+            padding: 30px 24px;
+          }
+          
+          .contact-form-container h3,
+          .contact-info-container h3 {
+            font-size: 1.5rem;
+          }
+        }
+      </style>
+      
+      <div class="contact-wrapper">
+        <div class="contact-grid">
+          <!-- Contact Form -->
+          <div class="contact-form-container element-animate">
+            <h3>Send us a Message</h3>
+            <p class="form-subtitle">Have a question or want to collaborate? We'd love to hear from you.</p>
             
-			<form name="MainSiteForm" action="#" method="post" onsubmit="return validateForm()" data-netlify="true">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label for="name">Name</label>
-                  <input name="name" type="text" id="name" class="form-control ">
-                </div>
-                <div class="col-md-6 form-group">
-                  <label for="phone">Phone</label>
-                  <input name="phone" type="text" id="phone" class="form-control ">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="email">Email</label>
-                  <input name="email" type="email" id="email" class="form-control ">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12 form-group">
-                  <label for="message">Write Message</label>
-                  <textarea name="message" id="message" class="form-control " cols="30" rows="8"></textarea>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="submit" value="Send Message" class="btn btn-primary px-3 py-3">
-                </div>
-              </div>
-            </form>
-			
-			
-          </div>
-          <div class="col-md-6 order-2 mb-5">
-            <div class="row justify-content-right">
-              <div class="col-md-8 mx-auto contact-form-contact-info">
-                <p class="d-flex">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14001.83947928172!2d77.1132108!3d28.6758872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84bb3fed8b1c51f9!2sBharati+Vidyapeeth&#39;s+College+of+Engineering!5e0!3m2!1sen!2sin!4v1545849034894" width="700" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
-                  <div class="d-flex">
-                    <span class="ion-ios-location custom-icon-contact mr-5"></span>
-                    <p>A-4 Block, Baba Ramdev Marg, Shiva Enclave, Paschim Vihar, New Delhi, Delhi 110063</p>
-                  </div>
-                </p>
-
+            <script>
+              function validateForm() {
+                var name = document.forms["MainSiteForm"]["name"].value;
+                var email = document.forms["MainSiteForm"]["email"].value;
+                var message = document.forms["MainSiteForm"]["message"].value;
                 
-
-                <p class="d-flex">
-                  <span class="ion-android-mail custom-icon-contact mr-5"></span>
-                  <span>bvpcsi2023@gmail.com</span>
-                </p>
+                if (name != "" && email != "" && message != "") {
+                  return true;
+                } else {
+                  alert("Please fill out all fields");
+                  return false;
+                }
+              }
+            </script>
+            
+            <form name="MainSiteForm" action="#" method="post" onsubmit="return validateForm()" data-netlify="true">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input name="name" type="text" id="name" required>
               </div>
+              
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input name="email" type="email" id="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn-submit">Send Message</button>
+            </form>
+          </div>
+          
+          <!-- Contact Info -->
+          <div class="contact-info-container element-animate">
+            <h3>Contact Information</h3>
+            
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <span class="ion-ios-location"></span>
+              </div>
+              <div class="contact-info-content">
+                <h4>Address</h4>
+                <p>A-4 Block, Baba Ramdev Marg, Shiva Enclave, Paschim Vihar, New Delhi, Delhi 110063</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <span class="ion-android-mail"></span>
+              </div>
+              <div class="contact-info-content">
+                <h4>Email</h4>
+                <p><a href="mailto:bvpcsi2023@gmail.com">bvpcsi2023@gmail.com</a></p>
+              </div>
+            </div>
+            
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14001.83947928172!2d77.1132108!3d28.6758872!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x84bb3fed8b1c51f9!2sBharati+Vidyapeeth&#39;s+College+of+Engineering!5e0!3m2!1sen!2sin!4v1545849034894" allowfullscreen loading="lazy"></iframe>
             </div>
           </div>
         </div>

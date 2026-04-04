@@ -10209,59 +10209,96 @@ header .navbar .cta-btn a:hover {
 }
 
 .site-footer {
-  padding: 5em 0;
-  background: #262626;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
+  padding: 60px 0 30px;
+  background: #0a0a0a;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid #1a1a1a;
 }
 
 .site-footer p:last-child {
   margin-bottom: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .site-footer a {
-  color: #e74208;
+  color: rgba(255, 255, 255, 0.7);
   border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .site-footer a:hover {
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f4b214;
+  border-bottom: 1px solid #f4b214;
+  text-decoration: none;
 }
 
 .site-footer h3 {
-  font-size: 12px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 24px;
   text-transform: uppercase;
-  letter-spacing: .1em;
-  font-weight: bold;
+  letter-spacing: 0.05em;
+  font-weight: 600;
   color: #fff;
 }
 
 .site-footer .footer-link li {
-  line-height: 1.5;
-  margin-bottom: 15px;
+  line-height: 1.8;
+  margin-bottom: 10px;
+}
+
+.site-footer .footer-link li span.d-block:first-child {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
 }
 
 .site-footer hr {
   width: 100%;
+  border-color: #1a1a1a;
+}
+
+.footer-social {
+  margin-top: 20px;
 }
 
 .footer-social a {
   line-height: 0;
   border-radius: 50%;
-  margin: 0 5px 5px 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 30px;
-  height: 30px;
+  margin: 0 8px 8px 0;
+  border: 1px solid #222;
+  width: 36px;
+  height: 36px;
   text-align: center;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.2s ease;
 }
 
 .footer-social a:hover {
-  background: #fff;
-  border-color: #fff;
+  background: #f4b214;
+  border-color: #f4b214;
   color: #000;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767.98px) {
+  .site-footer {
+    padding: 40px 0 20px;
+  }
+  
+  .site-footer h3 {
+    margin-bottom: 16px;
+  }
+  
+  .site-footer .mb-5 {
+    margin-bottom: 2rem !important;
+  }
 }
 
 .link-thumbnail {
